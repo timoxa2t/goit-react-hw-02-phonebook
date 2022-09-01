@@ -6,10 +6,15 @@ export default class ContactForm extends Component{
 
     constructor(){
         super()
-        this.state = {
-            name: "",
-            number: ""
-        }
+        this.nameChange = this.nameChange.bind(this);
+        this.phoneChange = this.phoneChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.clearForm = this.clearForm.bind(this);
+    }
+
+    state = {
+        name: "",
+        number: ""
     }
 
     nameChange = ({target}) => {
