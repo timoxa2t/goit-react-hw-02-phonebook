@@ -32,8 +32,9 @@ export default class ContactForm extends Component{
     handleSubmit = (event) => {
         event.preventDefault()
         const {name, number} = this.state
-        this.props.addContact({name, number}) 
-            .then(this.clearForm)
+        if(this.props.addContact({name, number})){
+            this.clearForm()
+        }
     }
 
     clearForm = () => {
